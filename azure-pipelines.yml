@@ -8,6 +8,13 @@ trigger:
 
 pool:
   vmImage: ubuntu-latest
+
+parameters:
+- name: succeed
+  displayName: Succeed or fail
+  type: boolean
+  default: false
+
 # strategy:
 #   matrix:
 #     Python37:
@@ -35,4 +42,7 @@ jobs:
   - script: echo Hello, world!
   - script: echo hey, man!!!
     displayName: 'Run a one-line script'
+  
+  - script: echo parameter is false
+    condition: eq(${{ parameters.succeed }}, false)
 
