@@ -13,17 +13,26 @@ pool:
 #     Python37:
 #       python.version: '3.7'
 
-steps:
-- task: UsePythonVersion@0
-  inputs:
-    versionSpec: '3.7'
+# steps:
+# - task: UsePythonVersion@0
+#   inputs:
+#     versionSpec: '3.7'
 
-- script: |
-    python -m pip install --upgrade pip
-    pip install -r requirements.txt
-  displayName: 'Install dependencies'
+# - script: |
+#     python -m pip install --upgrade pip
+#     pip install -r requirements.txt
+#   displayName: 'Install dependencies'
 
-- script: |
-    pip install pytest pytest-azurepipelines
-    pytest
-  displayName: 'pytest'
+# - script: |
+#     pip install pytest pytest-azurepipelines
+#     pytest
+#   displayName: 'pytest'
+  
+
+jobs:
+- job: Work
+  steps:
+  - script: echo Hello, world!
+  - script: echo hey, man!!!
+    displayName: 'Run a one-line script'
+
